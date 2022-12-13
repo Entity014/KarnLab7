@@ -6,10 +6,7 @@ using namespace std;
 int adiff(int a, int b)
 {
   if( abs(b - a)%360 <= 180) return (abs(b - a)%360);
-  else
-  {
-    return 360 - (abs(b - a)%360);
-  }
+  else return 360 - (abs(b - a)%360);
 }
 
 int main(){

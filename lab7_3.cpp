@@ -4,32 +4,27 @@ using namespace std;
 
 int adiff(int a, int b)
 {
-  int r1, r2;
-  r1 = a%360;
-  r2 = b%360;
-  if(r1 > r2)
+  int c;
+  if( a - b > 0)
   {
-    if ( (r1 - r2) <= 180)
+    c = a - b;
+    if( c >= 360)
     {
-      return r1-r2;
-    }
-    if ( (r1 - r2) > 180)
-    {
-      return 360-(r1-r2);
+      c = c%360;
     }
   }
-  else
+  if( a - b < 0 and a - b > -180)
   {
-    if( r2 - r1 <= 180)
-    {
-      return r2-r1;
-    }
-    if( r2 - r1 > 180)
-    {
-      return 360 - (r2 - r1);
-    }
+    c = a - b;
+    c = -c;
   }
-  return 0;
+  if( a - b < -180)
+  {
+    c = a - b;
+    c = c + 360;
+  }
+
+  return c;
 }
 
 int main(){

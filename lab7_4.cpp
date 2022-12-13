@@ -13,7 +13,7 @@ int main(){
 	cout << "Please input GPA: ";
 	cin >> key;
 	int i = 0;
-	while(i < 10)
+	while(i < sizeof(name)/sizeof(name[0]))
 	{
 		if(gpa[i] >= key)
 		{

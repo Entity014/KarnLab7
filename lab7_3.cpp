@@ -1,29 +1,12 @@
 #include<iostream>
+#include<cmath>
 
 using namespace std;
 
 int adiff(int a, int b)
 {
-  int c;
-  if( a - b > 0)
-  {
-    c = a - b;
-    if( c >= 360)
-    {
-      c = c%360;
-    }
-  }
-  if( b - a > 0)
-  {
-    c = b - a;
-    if( c >= 180)
-    {
-      c -= 360;
-      c = -c;
-    }
-  }
-
-  return c;
+  if( abs(b - a)%360 <= 180) return (abs(b - a)%360);
+  else; return 360 - (abs(b - a)%360);
 }
 
 int main(){
